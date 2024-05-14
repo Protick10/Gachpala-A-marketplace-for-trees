@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+.featured{
+    background-color: #E6F5DD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+
+}
+.playfare-font{
+    font-weight: 700;
+}
+
+.featured h2{
+    font-size: 2.5rem;
+    margin: 20px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.featurecard{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+
+}
+.card{
+    background-color: white;
+    border: none;
+    margin: 10px;
+    padding: 24px;
+    height: auto;
+    width:277px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 1px 9px 21px 0px rgba(0, 0, 0, 0.10), 9px 85px 51px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+
+}
+
+.card img{
+    width: 279px;
+    height: 360px;
+    border-radius: 4px;
+    /* padding: 24px; */
+
+
+
+}
+
+.featured-image{
+    width: 279px;
+    height: 360px;
+    border-radius: 4px;
+}
+
+.atc img{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}    
+
+.np{
+    padding: 12px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.np h3{
+    color: #004F44;
+font-family: "Playfair Display";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.3px;
+}
+
+.atc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 0px 0px 0px;
+}
+
+.atc button{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFA500;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid  #006838;
+    background:  #006838;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+.atc button img{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: rgb(233, 231, 227);
+    color: rgb(233, 231, 227);
+    /* background-color: rgb(233, 231, 227); */
+    
+}
+
+.atcimg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: var(--Primary_BG, #E6F5DD);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.actimg img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.atc button:hover{
+    background-color: #329265;
+    transition: .5s;
+    border: 1px solid  #e7e4df;
+}
+
+.vap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 20px; */
+}
+
+.vap p{
+    color: var(--Primary, #006838);
+font-family: inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 155.556% */
+}
