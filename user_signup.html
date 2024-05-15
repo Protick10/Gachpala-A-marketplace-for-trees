@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>User Registration</h2>
+    <form action="register.php" method="POST" enctype="multipart/form-data">
+        <label for="username">Name:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="repassword">Re-enter Password:</label><br>
+        <input type="password" id="repassword" name="repassword" required><br><br>
+        
+        <label for="address">Address Line:</label><br>
+        <input type="text" id="address" name="address" required><br><br>
+        
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" required><br><br>
+        
+        <label for="zipcode">Zip Code:</label><br>
+        <input type="number" id="zipcode" name="zipcode" required><br><br>
+        
+        <label for="picture">Profile Picture:</label><br>
+        <input type="file" id="picture" name="picture" accept="image/*"><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
