@@ -4,39 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Tree Details</title>
+    <link rel="stylesheet" href="styles/admin_update.css">
 </head>
 <body>
+    <?php
+    // Connect to the database
+    $host = "localhost"; 
+    $username = "root"; 
+    $password = ""; 
+    $dbname = "gachpala"; 
+    $con = new mysqli($host, $username, $password, $dbname);
+    if ($con->connect_error) {
+        die("Connection failed: " . $con->connect_error);
+    }
+
+    // Get the tree_key from the query parameter
+    $treekey = $_GET['key'];
+
+    // Fetch tree details from the database
+    $sql = "SELECT * FROM trees WHERE Tree_key='$treekey'"; 
+    $result = mysqli_query($con, $sql);
+
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $name = $row['Tree_name'];
+        $price = $row['Tree_price'];
+        $section = $row['Tree_section'];
+        $category = $row['Tree_catagory'];
+    } else {
+        echo "No tree found with the specified key.";
+        exit;
+    }
+
+    // Close the connection
+    $con->close();
+    ?>
+
     <h2>Update Tree Details</h2>
-    <form id="updateForm" action="update_tree_process.php" method="POST">
-        <!-- Hidden input field to store the tree ID -->
-        <input type="hidden" id="treeId" name="tree_id" value="">
-        <label for="name">Tree Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="category">Tree Category:</label>
-        <input type="text" id="category" name="category"><br><br>
-        <label for="price">Tree Price:</label>
-        <input type="text" id="price" name="price"><br><br>
-        <label for="section">Tree Section:</label>
-        <input type="text" id="section" name="section"><br><br>
-        <button type="button" onclick="updateTreeDetails()">Update Details</button> <!-- Call the function on button click -->
+    <form action="save_tree_details.php" method="post">
+        <input type="hidden" name="treekey" value="<?php echo htmlspecialchars($treekey); ?>">
+        <div>
+            <label for="name">Tree Name:</label>
+            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>" required>
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" value="<?php echo htmlspecialchars($category); ?>" required>
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" value="<?php echo htmlspecialchars($price); ?>" required>
+        </div>
+        <div>
+            <label for="section">Section:</label>
+            <input type="text" id="section" name="section" value="<?php echo htmlspecialchars($section); ?>" required>
+        </div>
+        <button type="submit">Save</button>
     </form>
-
-    <script>
-        // Function to handle click event on "Update Details" button
-        function updateTreeDetails() {
-            var treeId = document.getElementById('treeId').value;
-            var name = document.getElementById('name').value;
-            var category = document.getElementById('category').value;
-            var price = document.getElementById('price').value;
-            var section = document.getElementById('section').value;
-
-            // Set the tree details in the form fields
-            document.getElementById('treeId').value = treeId;
-            document.getElementById('name').value = name;
-            document.getElementById('category').value = category;
-            document.getElementById('price').value = price;
-            document.getElementById('section').value = section;
-        }
-    </script>
 </body>
 </html>
+
