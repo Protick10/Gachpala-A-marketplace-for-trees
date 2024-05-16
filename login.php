@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Prepare a statement to prevent SQL injection
+   
     $stmt = $con->prepare("SELECT * FROM user WHERE User_email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -27,11 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $name = $row['User_name'];
         $user_email = $row['User_email'];
         $user_password = $row['User_password'];
-        $user_pic = $row['User_pic']; // Assuming you have this column in your database
+        $user_pic = $row['User_pic']; 
 
         if (password_verify($password, $user_password)) {
+            $_SESSION['User_email'] = $user_email;
             $_SESSION['username'] = $name;
-            $_SESSION['userpic'] = $user_pic; // Assuming this is the correct path
+            $_SESSION['userpic'] = $user_pic; 
             header('Location: index.php');
             exit();
         } else {
@@ -52,7 +53,7 @@ $con->close();
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <!-- Add your styles and scripts -->
+  
 </head>
 <body>
     <h2>Login</h2>

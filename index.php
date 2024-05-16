@@ -1,5 +1,31 @@
 <?php
 session_start();
+if (isset($_SESSION['User_email'])) {
+  $user_email = $_SESSION['User_email'];
+
+  $host = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "gachpala";
+  $con = new mysqli($host, $username, $password, $dbname);
+  if ($con->connect_error) {
+      die("Connection failed: " . $con->connect_error);
+  }
+
+  // Fetch cart items for the logged-in user
+  $stmt = $con->prepare("SELECT COUNT(*) AS cart_count FROM cart WHERE User_email = ?");
+  $stmt->bind_param("s", $user_email);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $row = $result->fetch_assoc();
+  $cart_count = $row['cart_count'];
+
+  $stmt->close();
+  $con->close();
+} else {
+  // If the user is not logged in, set cart count to 0
+  $cart_count = 0;
+}
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +105,7 @@ session_start();
         >
           <ul class="flex space-x-8">
             <li><a href="">Home</a></li>
-            <li><a href="">Shop</a></li>
+            <li><a href="shop.php">Shop</a></li>
             <li><a href="">About Us</a></li>
             <li><a href="">Contact Us</a></li>
           </ul>
@@ -106,7 +132,7 @@ session_start();
                 />
               </svg>
             </a>
-            <a href="" class="ml-1">
+            <a href="cart.php" class="ml-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
