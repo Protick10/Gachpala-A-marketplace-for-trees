@@ -60,238 +60,231 @@
     </style>
   </head>
   <body>
-
-
-      <!-- 
+    <!-- 
             navbar
         -->
-        <nav class="inter-font text-base font-semibold shadow-sm">
-            <div
-              class="flex items-center justify-between max-w-[1280px] px-8 mx-auto"
+    <nav class="inter-font text-base font-semibold shadow-sm">
+      <div
+        class="flex items-center justify-between max-w-[1280px] px-8 mx-auto"
+      >
+        <ul class="flex space-x-8">
+          <li><a href="index.php">Home</a></li>
+          <li><a href="shop.php">Shop</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+
+        <div class="my-3 mr-44">
+          <img src="images/Logo.svg" alt="" />
+        </div>
+
+        <div class="flex space-x-3 items-center ml-12">
+          <a href="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
             >
-              <ul class="flex space-x-8">
-                <li><a href="">Home</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
-              </ul>
-    
-              <div class="my-3 mr-44">
-                <img src="images/Logo.svg" alt="" />
-              </div>
-    
-              <div class="flex space-x-3 items-center ml-12">
-                <a href="">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-                      stroke="#121212"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-                <a href="" class="ml-1">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6M10 21C10 21.5523 9.55228 22 9 22C8.44772 22 8 21.5523 8 21C8 20.4477 8.44772 20 9 20C9.55228 20 10 20.4477 10 21ZM21 21C21 21.5523 20.5523 22 20 22C19.4477 22 19 21.5523 19 21C19 20.4477 19.4477 20 20 20C20.5523 20 21 20.4477 21 21Z"
-                      stroke="#121212"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </nav>
-    
-    
-    
-          <hr class="border-gray-100">
+              <path
+                d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                stroke="#121212"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a href="" class="ml-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6M10 21C10 21.5523 9.55228 22 9 22C8.44772 22 8 21.5523 8 21C8 20.4477 8.44772 20 9 20C9.55228 20 10 20.4477 10 21ZM21 21C21 21.5523 20.5523 22 20 22C19.4477 22 19 21.5523 19 21C19 20.4477 19.4477 20 20 20C20.5523 20 21 20.4477 21 21Z"
+                stroke="#121212"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
 
-
-
-
-
-
-
+    <hr class="border-gray-100" />
 
     <!-- form  -->
-    <div class="mt-10 max-w-7xl mx-auto bg-[#FBFBFF]">
-      <h2 class="text-center pb-7 inter-font text-3xl font-semibold">
-        User Registration
-      </h2>
-      <form
-        action="register.php"
-        method="POST"
-        class="max-w-2xl space-y-2 mx-auto grid grid-cols-2 bg-gray-100 p-5 rounded-xl shadow-2xl space-x-5 my-auto"
-        enctype="multipart/form-data"
-      >
-        <div class="ml-5 mt-2">
-          <label
-            for="username"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Name</label
-          >
-          <input
-            type="text"
-            id="username"
-            name="username"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="Name"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="phone"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Phone Number</label
-          >
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="Phone Number"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="email"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Email</label
-          >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="password"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Password</label
-          >
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="password"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="repassword"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Retype Password</label
-          >
-          <input
-            type="password"
-            id="repassword"
-            name="repassword"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="repassword"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="address"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Address</label
-          >
-          <input
-            type="text"
-            id="address"
-            name="address"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="address"
-            required
-          />
-        </div>
-        <div>
-          <label for="city" class="block mb-1 text-sm font-medium text-gray-900"
-            >City</label
-          >
-          <input
-            type="text"
-            id="city"
-            name="city"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="city"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="number"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Zip</label
-          >
-          <input
-            type="number"
-            id="zipcode"
-            name="zipcode"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            placeholder="zipcode"
-            required
-          />
-        </div>
-        <div>
-          <label
-            for="picture"
-            class="block mb-1 text-sm font-medium text-gray-900"
-            >Profile Photo</label
-          >
-          <input
-            type="file"
-            id="picture"
-            name="picture"
-            accept="image/*"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="text-white col-span-2 bg-Primary_Light hover:bg-Primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-cente r"
+    <div class="bg-[#FBFBFF] pb-24">
+      <div class="pt-10 max-w-7xl mx-auto">
+        <h2 class="text-center pb-7 inter-font text-3xl font-semibold">
+          User Registration
+        </h2>
+        <form
+          action="register.php"
+          method="POST"
+          class="max-w-2xl space-y-2 mx-auto grid grid-cols-2 bg-gray-100 p-5 rounded-xl shadow-2xl space-x-5 my-auto"
+          enctype="multipart/form-data"
         >
-          Register
-        </button>
-        <div class="text-center col-span-2">
-          <label>
-            Already have an account?
-            <a
-              href="/login.php"
-              class="text-blue-600 hover:text-blue-800 hover:font-medium"
-              >Login</a
+          <div class="ml-5 mt-2">
+            <label
+              for="username"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Name</label
             >
-          </label>
-        </div>
-      </form>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="phone"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Phone Number</label
+            >
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Phone Number"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="password"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="password"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="repassword"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Retype Password</label
+            >
+            <input
+              type="password"
+              id="repassword"
+              name="repassword"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="repassword"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="address"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Address</label
+            >
+            <input
+              type="text"
+              id="address"
+              name="address"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="address"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="city"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >City</label
+            >
+            <input
+              type="text"
+              id="city"
+              name="city"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="city"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="number"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Zip</label
+            >
+            <input
+              type="number"
+              id="zipcode"
+              name="zipcode"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="zipcode"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="picture"
+              class="block mb-1 text-sm font-medium text-gray-900"
+              >Profile Photo</label
+            >
+            <input
+              type="file"
+              id="picture"
+              name="picture"
+              accept="image/*"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="text-white col-span-2 bg-Primary_Light hover:bg-Primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-cente r"
+          >
+            Register
+          </button>
+          <div class="text-center col-span-2">
+            <label>
+              Already have an account?
+              <a
+                href="/Gachpala-A-marketplace-for-trees/login.php"
+                class="text-blue-600 hover:text-blue-800 hover:font-medium"
+                >Login</a
+              >
+            </label>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- <div
@@ -368,7 +361,7 @@
     <!-- 
         footer section
      -->
-    <footer class="mt-24">
+    <footer>
       <div class="social">
         <img src="images/youtube.svg" alt="" />
         <img src="images/facebook.svg" alt="" />
