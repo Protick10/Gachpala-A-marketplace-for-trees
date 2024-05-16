@@ -1,10 +1,10 @@
 <?php
 session_start();
+
 $host = "localhost"; 
 $username = "root"; 
 $password = ""; 
 $dbname = "gachpala"; 
-
 
 $con = new mysqli($host, $username, $password, $dbname);
 
@@ -12,48 +12,39 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
-    $password = $_POST['password'];}
+    $password = $_POST['password'];
 
-$sql = "SELECT * FROM user WHERE $email = User_email"; 
+    // Prepare a statement to prevent SQL injection
+    $stmt = $con->prepare("SELECT * FROM user WHERE User_email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-// $name = "SELECT Tree_name FROM trees WHERE id = 001";
-
-// echo '<p>' .$name .'</p>';
-
-$result = mysqli_query($con, $sql);
-
-if ($result->num_rows > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-        // $tem = $row;
-        // $json = json_encode($tem);
-
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
         $name = $row['User_name'];
         $user_email = $row['User_email'];
         $user_password = $row['User_password'];
-        $user_pic = $row['User_pic'];
-    }
-} else {
-    echo "No Results Found.";
-}
+        $user_pic = $row['User_pic']; // Assuming you have this column in your database
 
-if ($email == $user_email && password_verify($password, $user_password)) {
-    $targetDir = "uploads/";
-        if (!is_dir($targetDir)) {
-            mkdir($targetDir, 0777, true);
+        if (password_verify($password, $user_password)) {
+            $_SESSION['username'] = $name;
+            $_SESSION['userpic'] = $user_pic; // Assuming this is the correct path
+            header('Location: index.php');
+            exit();
+        } else {
+            $error = "Invalid email or password.";
         }
+    } else {
+        $error = "Invalid email or password.";
+    }
 
-        $targetFile = $targetDir . basename($picture[$user_pic]);
-
-        $_SESSION['username'] = $name;
-        $_SESSION['userpic'] = $targetFile;
-    header('Location: feature.php');
-} else {
-    $error = "Invalid email or password.";
+    $stmt->close();
 }
 
+$con->close();
 ?>
 
 <!DOCTYPE html>
