@@ -73,7 +73,7 @@ session_start();
       <!-- 
             navbar
         -->
-      <nav class="inter-font text-base font-semibold">
+        <nav class="inter-font text-base font-semibold">
         <div
           class="flex items-center justify-between max-w-[1280px] px-8 mx-auto"
         >
@@ -123,13 +123,28 @@ session_start();
                 />
               </svg>
             </a>
-            <button class="py-3 px-5">Log In</button>
-            <button class="bg-Primary text-white py-3 px-5 rounded-lg">
-              Sign Up
-            </button>
+            <?php if (isset($_SESSION['username'])): ?>
+              <div class="flex items-center space-x-2">
+                <img src="<?php echo $_SESSION['userpic']; ?>" alt="User Picture" class="w-10 h-10 rounded-full">
+                <span><?php echo htmlspecialchars($_SESSION['username']); ?></span>
+              </div>
+              <a href="logout.php" class="py-3 px-5">Log Out</a>
+            <?php else: ?>
+              <!-- <button class="py-3 px-5">Log In</button>
+              <button class="bg-Primary text-white py-3 px-5 rounded-lg">
+                Sign Up
+              </button> -->
+
+              <a href="login.php" class="py-3 px-5">Log In</a>
+              <a href="user_signup.html" class="bg-Primary text-white py-3 px-5 rounded-lg">
+                Sign Up
+              </a>
+            <?php endif; ?>
           </div>
         </div>
       </nav>
+
+
 
       <hr class="border-gray-100">
       
