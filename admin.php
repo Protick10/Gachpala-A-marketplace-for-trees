@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Redirect to admin login page if not logged in
+if (!isset($_SESSION['admin_email'])) {
+    header("Location: admin_login.php");
+    exit();
+}
+
 
 $host = "localhost"; 
 $username = "root"; 
@@ -50,3 +58,81 @@ if (isset($_POST['add_tree'])) {
 
 mysqli_close($conn);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.addtrees {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.addtrees h3 {
+    margin-top: 0;
+}
+
+.addtrees form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addtrees input[type="file"],
+.addtrees input[type="text"],
+.addtrees input[type="number"], 
+.addtrees button[type="submit"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.addtrees button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.addtrees button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <h2 class="title">Admin Dashboard</h2>
+    <div class="addtrees">
+        <h3>Add Trees</h3>
+        <form action="admin.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" id="image">
+            <input type="text" name="name" id="name" placeholder="Tree Name">
+            <input type="text" name="catagory" id="catagory" placeholder="Tree catagory">
+            <input type="text" name="price" id="price" placeholder="Price">
+            <input type="text" name="section" id="section" placeholder="Section">
+            <input type="text" name="key" id="key" placeholder="key">
+            
+            <input type="number" name="quantity" id="quantity" placeholder="Quantity">
+            <button type="submit" name="add_tree">Add</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

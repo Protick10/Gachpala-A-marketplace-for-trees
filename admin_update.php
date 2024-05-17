@@ -1,3 +1,15 @@
+<?php
+
+session_start();
+
+// Redirect to admin login page if not logged in
+if (!isset($_SESSION['admin_email'])) {
+    header("Location: admin_login.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

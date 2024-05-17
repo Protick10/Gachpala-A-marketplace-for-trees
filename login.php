@@ -191,7 +191,14 @@ $con->close();
                         <a href="/Gachpala-A-marketplace-for-trees/user_signup.html"
                             class="text-blue-600 hover:text-blue-800 hover:font-medium">Register</a>
                     </label>
+
+                    
                 </div>
+                <label class="text-center">
+                        Are you an admin?
+                        <a href="/Gachpala-A-marketplace-for-trees/admin_login.php"
+                            class="text-blue-600 hover:text-blue-800 hover:font-medium">Log In</a>
+                </label>
             </form>
         </div>
 
