@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
 
         // Display each tree dynamically
         echo '<div class="card">';
-        echo '<img class="featured-image" src="data:image/png;base64,' . base64_encode($pic) . '" alt="' . $name . '"/>';
+        echo '<img src="' . htmlspecialchars($pic) . '" alt="' . htmlspecialchars($name) . '"/>'; 
         echo '<div class="np">';
         echo '<h3 class="inter-font">' . $name . '</h3>';
         echo '<p>&#2547; 250</p>'; // Assuming price is fixed for featured trees

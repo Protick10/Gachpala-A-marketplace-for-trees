@@ -39,7 +39,7 @@ if (isset($_SESSION['User_email'])) {
 
             // Displaying each plant as a card with an "Add to Cart" button
             echo '<div class="card">';
-            echo '<img src="data:image/png;base64,'.base64_encode($pic).'"/>';
+            echo '<img src="' . htmlspecialchars($pic) . '" alt="' . htmlspecialchars($name) . '"/>'; 
             echo '<div class="np">';
             echo '<h3>' . $name . '</h3>';
             echo '<p>&#2547; ' . $price . '</p>';

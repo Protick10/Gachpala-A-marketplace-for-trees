@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Update</title>
     <link rel="stylesheet" href="styles/admin_update.css">
 </head>
 <body>
@@ -31,18 +31,18 @@
                 $price = $row['Tree_price'];
                 $section = $row['Tree_section'];
                 $treekey = $row['Tree_key'];
-                $category = $row['Tree_catagory']; // Added category variable
+                $category = $row['Tree_catagory'];
                 $quantity = $row['Tree_quantity'];
 
                 // Displaying each plant as a card with an "Update Details" button
                 echo '<div class="card">';
-                echo '<img src="data:image/png;base64,'.base64_encode($pic).'"/>';
+                echo '<img src="' . htmlspecialchars($pic) . '" alt="' . htmlspecialchars($name) . '"/>'; // Use path to image
                 echo '<div class="np">';
-                echo '<h3>' . $name . '</h3>';
-                echo '<p>Category: ' . $category . '</p>'; // Display category
-                echo '<p>key: ' . $treekey . '</p>'; 
-                echo '<p>&#2547; ' . $price . '</p>';
-                echo '<p>Quantity: ' . $quantity . '</p>';
+                echo '<h3>' . htmlspecialchars($name) . '</h3>';
+                echo '<p>Category: ' . htmlspecialchars($category) . '</p>';
+                echo '<p>Key: ' . htmlspecialchars($treekey) . '</p>'; 
+                echo '<p>&#2547; ' . htmlspecialchars($price) . '</p>';
+                echo '<p>Quantity: ' . htmlspecialchars($quantity) . '</p>';
                 echo '</div>';
                 echo '<div class="atc">';
                 // Pass tree details to the JavaScript function when "Update Details" button is clicked
@@ -82,3 +82,4 @@
     </script>
 </body>
 </html>
+
