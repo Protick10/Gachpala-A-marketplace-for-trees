@@ -19,7 +19,7 @@ $section = $_POST['section'];
 // Update tree details in the database
 $sql = "UPDATE trees SET Tree_name='$name', Tree_catagory='$category', Tree_price='$price', Tree_section='$section' WHERE Tree_key='$treekey'";
 if (mysqli_query($con, $sql)) {
-    echo "Tree details updated successfully.";
+    echo "<p>Tree details updated successfully. Go to <a href='admin_update.php'>Update Page</a></p>";
 } else {
     echo "Error updating record: " . mysqli_error($con);
 }
@@ -27,3 +27,4 @@ if (mysqli_query($con, $sql)) {
 // Close the connection
 $con->close();
 ?>
+
