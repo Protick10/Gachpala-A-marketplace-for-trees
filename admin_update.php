@@ -32,6 +32,7 @@
                 $section = $row['Tree_section'];
                 $treekey = $row['Tree_key'];
                 $category = $row['Tree_catagory']; // Added category variable
+                $quantity = $row['Tree_quantity'];
 
                 // Displaying each plant as a card with an "Update Details" button
                 echo '<div class="card">';
@@ -41,6 +42,7 @@
                 echo '<p>Category: ' . $category . '</p>'; // Display category
                 echo '<p>key: ' . $treekey . '</p>'; 
                 echo '<p>&#2547; ' . $price . '</p>';
+                echo '<p>Quantity: ' . $quantity . '</p>';
                 echo '</div>';
                 echo '<div class="atc">';
                 // Pass tree details to the JavaScript function when "Update Details" button is clicked

@@ -51,14 +51,15 @@ if (isset($_POST['add_tree'])) {
     $category = $_POST['catagory']; // corrected variable name
     $price = $_POST['price'];
     $section = $_POST['section'];
+    $quantity = $_POST['quantity'];
     
     // Check if file was uploaded without errors
     if(isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $image = $_FILES['image']['tmp_name'];
         $image = addslashes(file_get_contents($image));
         
-        $sql = "INSERT INTO trees (Tree_id, Tree_name, Tree_catagory, Tree_price, Tree_section, Tree_pic) 
-                VALUES (DEFAULT, '$name', '$category', '$price', '$section', '$image')";
+        $sql = "INSERT INTO trees (Tree_id, Tree_name, Tree_catagory, Tree_price, Tree_section, Tree_pic, Tree_quantity) 
+                VALUES (DEFAULT, '$name', '$category', '$price', '$section', '$image', '$quantity')";
         
         if (mysqli_query($conn, $sql)) {
             echo "New record inserted successfully";
