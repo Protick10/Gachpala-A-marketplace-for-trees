@@ -40,9 +40,10 @@ if ($result->num_rows > 0) {
         echo '</div>';
     }
     echo '<div class="vap">';
+    echo '<a href="all_featured_trees.php">';
     echo '<p>VIEW ALL PLANTS</p>';
     echo '<img src="images/arrow-right-circle.png" alt="">';
-    echo '</div>';
+    echo '</a>';
     echo '</div>';
 //     echo '<div class="vap">';
 // echo '<p>VIEW ALL PLANTS</p>';

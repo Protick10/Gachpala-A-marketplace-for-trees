@@ -144,7 +144,7 @@ if (isset($_SESSION['User_email'])) {
 
     </header>
     <section class="bg-[#E6F5DD] min-h-[78svh]">
-        <div class="featured max-w-7xl grid grid-cols-3 mx-auto">
+        <div class="featured max-w-7xl grid grid-cols-2 mx-auto">
             <div class="featurecard">
                 <?php
                 // Start session

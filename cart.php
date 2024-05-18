@@ -179,7 +179,7 @@ $con->close();
                                         <input type="hidden" name="cart_items[][Price]" value="<?php echo htmlspecialchars($item['Tree_price']); ?>">
                                     </th>
                                     <td class="px-6 py-4">
-                                        $<?php echo number_format($item['Tree_price'], 2); ?>
+                                        <?php echo number_format($item['Tree_price'], 2); ?>
                                     </td>
                                     <td class="px-6 py-4">
                                         <?php echo htmlspecialchars($item['Quantity']); ?>
@@ -191,7 +191,7 @@ $con->close();
                 </div>
                 <div class="flex justify-between mt-4">
                     <div class="text-xl">
-                        Total Price: $<?php echo number_format($total_price, 2); ?>
+                        Total Price: <?php echo number_format($total_price, 2); ?>
                         <input type="hidden" name="total_price" value="<?php echo htmlspecialchars($total_price); ?>">
                     </div>
                     <button type="submit" name="place_order" class="px-4 py-2 bg-green-500 text-white rounded">Place Order</button>

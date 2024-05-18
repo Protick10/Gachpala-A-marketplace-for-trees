@@ -77,7 +77,7 @@ $admin_email = $_SESSION['admin_email'];
 
                 <ul class="font-bold space-y-2">
                     <a href="admin.php">
-                        <li class="px-6 py-2 rounded-lg cursor-pointer hover:text-white hover:bg-Primary">ADD TRESS</li>
+                        <li class="px-6 py-2 rounded-lg cursor-pointer hover:text-white hover:bg-Primary">ADD TREES</li>
                     </a>
                     <a href="/Gachpala-A-marketplace-for-trees/admin_update.php">
                         <li class="px-6 py-2 rounded-lg cursor-pointer hover:text-white hover:bg-Primary">UPDATE</li>
